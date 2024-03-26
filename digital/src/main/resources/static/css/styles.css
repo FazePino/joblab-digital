@@ -12,7 +12,8 @@
     height: 100%;
     position: fixed;
     width: 20vw;
-    box-shadow: 10px 10px 5px lightgrey;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    
 }
 
 .spalla h1 {
@@ -34,7 +35,7 @@
     border-radius: 65px;
     margin-left: 1vw;
     margin-bottom: 1.5vw;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .spalla h3 {
@@ -46,7 +47,6 @@
 .spalla #data, #orologio{
     font-family:italic;
     font-size: 1vw;
-
 }
 
 
@@ -55,16 +55,18 @@
 
 /*MENU*/
 .menu {
-    margin-left: 20.33vw;
+    margin-left: 20.25vw;
     position: fixed;
-
+    z-index: 1;
+    background-color: white;
 }
 
 .ulmenu {
     list-style-type: none;
-    padding: 0;
+    padding: 0px;
     overflow: hidden;
-    border-bottom: 3px solid rgb(75, 75, 75);
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    background-color: white;
 
     position: fixed;
     top: 0;
@@ -119,8 +121,9 @@
 
 button{
     border: none;
-    background-color: yellow;
-    padding: 15px 32px;
+    background-color: rgb(164, 164, 164);
+    padding: 13px 50px;
+    border: 2px solid rgb(160, 0, 0);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -164,39 +167,46 @@ button{
 /*END PAGINA PRINCIPALE*/
 
 /*ABOUT*/
+
+
+
 .container{
-    border: 2px solid yellow;
+    /*border: 2px solid yellow;*/
     position: absolute;
     margin-left: 20.4vw;
     margin-top: 2.7vw;
     height: 65vw;
     width: 79%;
-    font-family: system-ui, sans-serif;
     font-size: 2.5ch;
+    font-family: system-ui, sans-serif;
 }
 
 .div{
-    border: 2px solid red;
+    font-family: system-ui, sans-serif;
+    /*border: 2px solid red;*/
     height: 18vw;
     width: 340.5px;
     margin-left: 100px;  
 }
 
+
 .div img{
     position: absolute;
-    margin-top:3vw;
+    margin-top: -8vw;
     margin-left: 30vw;
     width: 400px;
 }
 
 .div1{
+    font-family: system-ui, sans-serif;
     background-color: rgb(230, 230, 230);
-    border: 2px solid black;
+    /* border: 2px solid black;*/
     height: 20vw;
 }
 
 .div1 p{
-    border: 2px solid red;
+    font-family: system-ui, sans-serif;
+    /*border: 2px solid red;*/
     width: 18vw;
     height: 9.5vw;
     margin-top: 2vw;
@@ -204,6 +214,7 @@ button{
 }
 
 .div1 h1{
+    font-family: system-ui, sans-serif;
     margin-right: 12vw;
     margin-top: 1vw;
 }
@@ -211,31 +222,62 @@ button{
 .div1 img{
     position: absolute;
     margin-top: -11vw;
-    margin-left: -34vw;
+    margin-left: -28vw;
     width: 400px;
 }  
 
 .div2{
-    border: 2px solid red;
+    font-family: system-ui, sans-serif;
+    /*border: 2px solid rgb(0, 255, 13);*/
     height: 20vw;
     width: 23vw;
     margin-left: 100px;
 }
 
+.div2 h1{
+    font-family: system-ui, sans-serif;
+    margin-right: 12vw;
+    margin-top: 1vw;
+}
+
+
 .div2 img{
     position: absolute;
     margin-top: -5vw;
     margin-left: 30vw;
-    width: 400px;
+    width: 400px;  
+    margin-top: -13vw;  
 }
 
 /*END ABOUT*/
 
 
-/*MAP*/
-.map {
-    height: 400px;
-    width: 100%;
+/*CONTACTS*/
+
+.titolo h1{
+    position: absolute;
+    margin-top: 5vw;
+    margin-left: 50vw;
 }
 
-/*END MAP*/
+.titolo .PPP {
+    /*border: 2px solid red;*/
+    position: fixed;
+    margin-top: 8vw;
+    margin-left: 47vw;
+}
+
+
+
+    /*Maps*/
+
+    .google-maps > iframe {
+        position: absolute;
+        top: 30%;
+        left: 32%;
+        width: 50vw !important;
+        height: 35vw !important;
+    }
+    /*Fine maps*/
+
+/*END CONTACTS*/

@@ -9,7 +9,8 @@
 <body>
     <div class="spalla">
         <div>
-            <img class="bussola" src="/logo.png" width="100%" height="100%"></img>
+            <img class="bussola" src="./image/logo.png" width="100%" height="100%"></img>
+            <div class="barr"> </div>
         </div>
 
         <h3>Bruce Wayne</h3>
@@ -19,16 +20,16 @@
     
     <div class="menu">
         <ul class="ulmenu">
-            <li class="limenu"><a href="/pages/details1.html">Home</a></li>
-            <li class="limenu"><a href="/pages/about.html">About</a></li>
-            <li class="limenu"><a href="/pages/contacts.html">Contacts</a></li>
+            <li class="limenu"><a href="./pages/details1.html">Home</a></li>
+            <li class="limenu"><a href="./pages/about.html">About</a></li>
+            <li class="limenu"><a href="./pages/contacts.html">Contacts</a></li>
         </ul>
     </div>
 
     <!-- PRINCIPALE -->
     <div class="principale">
         <div class="name1">
-            <h3>ivory Mercedes 208</h3>
+            <h3 id="title1">ivory Mercedes 2008</h3>
         </div>
         <div class="name1">
             <h3>tan Fiat 1992</h3>
@@ -38,15 +39,18 @@
         </div>
         <div class="name1">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto1">
+            <button type="button"><a href="">Details</a></button>
         </div>
         <div class="name1">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto2">
+            <button type="button"><a href="">Details</a></button>
         </div>
         <div class="name1">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto3">
+            <button type="button"><a href="">Details</a></button>
         </div>
         <div class="name2">
             <h3>grey BMW 2003</h3>
@@ -59,15 +63,18 @@
         </div>
         <div class="ex2">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto4">
+            <button type="button"><a href="">Details</a></button>
         </div>
         <div class="ex2">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto5">
+            <button type="button"><a href="">Details</a></button>
         </div>
         <div class="ex2">
             <h5>Price: €57872</h5>
-            <button type="button"><a href="">Click here</a></button>
+            <img src="" alt="" id="foto6">
+            <button type="button"><a href="">Details</a></button>
         </div>
     </div>
 
@@ -76,36 +83,21 @@
 <script type="module">
     import fetch from './js/fetch.js';
 
-    /***
-     * Funzione che riporta l'output di un servizio formattato in un code Element
-     * @Parameters:
-     * f: la funzione che restituisce l'output json del servizio
-     * idCode: l'id dell'elemento in cui incollare il contenuto
-     */
-    async function showDataInCode(f, idCode) {
-        const data = await f();
-        const codeElement = document.getElementById(idCode);
-        codeElement.innerHTML = JSON.stringify(data, null, 4);
-    }
+    getJSON();
 
-    /***
-     * Funzione che aggiunge all'evento di apertura la chiamata al servizio del back-end
-     * @Parameters:
-     * type => il tipo di output da visualizzare, è il riferimento per:
-     *  * la funzione (getXXXX)
-     *  * l'elemento details (btnXXXX) a cui agganciare l'evento
-     *  * l'elemento code (resultXXXX) in cui incollare il risultato
-     */
-    async function addToggleEventToDetail(type) {
-        const detailElement = document.getElementById(`btn${type}`);
-        detailElement.addEventListener("toggle", (event) => {
-            if (detailElement.open) {
-                showDataInCode(fetch[`get${type}`], `result${type}`)
-            }
-        });
-    }
+        // Get json from backend
+        async function getJSON() {
+            let jsonData = await fetch[`getCars`]();
+            console.log(jsonData);
+            console.log(jsonData[0]);
+            console.log(jsonData[0].name);
+            document.getElementById("foto1").setAttribute("src", jsonData[0].image);
+            document.getElementById("foto2").setAttribute("src", jsonData[1].image);
+            document.getElementById("foto3").setAttribute("src", jsonData[2].image);
+            document.getElementById("foto4").setAttribute("src", jsonData[3].image);
+            document.getElementById("foto5").setAttribute("src", jsonData[4].image);
+            document.getElementById("foto6").setAttribute("src", jsonData[5].image);
 
-    //Applico la logica di chiamata ed esposizione per tutti i 3 tipi di servizio che ho a disposizione
-    ["Cars", "Techs", "Clothes"].forEach(type => addToggleEventToDetail(type));
+        }
 </script>
 </html>
