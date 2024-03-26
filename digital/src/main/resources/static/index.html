@@ -1,86 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joblab - Modulo Digital</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <title>ByteBuilders</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
-
 <body>
-    <h1>Benvenuti al modulo Digital del JobLab Accenture</h1>
-    <p>cliccate sui pulsanti sotto per vedere i dati restituiti dal back-end</p>
+    <div class="spalla">
+        <div>
+            <img class="bussola" src="/logo.png" width="100%" height="100%"></img>
+        </div>
 
-    <details id="btnCars">
-        <summary>Auto in vendita</summary>
-        <pre><code id="resultCars"></code>
-        </pre>
-    </details>
+        <h3>Bruce Wayne</h3>
+        <h3 id ="data">data</h3>
+        <h3 id ="orologio">ora</h3>
+    </div>
+    
+    <div class="menu">
+        <ul class="ulmenu">
+            <li class="limenu"><a href="/pages/details1.html">Home</a></li>
+            <li class="limenu"><a href="/pages/about.html">About</a></li>
+            <li class="limenu"><a href="/pages/contacts.html">Contacts</a></li>
+        </ul>
+    </div>
 
-    <details id="btnClothes">
-        <summary>Vestiti in vendita</summary>
-        <pre><code id="resultClothes"></code>
-        </pre>
-    </details>
+    <!-- PRINCIPALE -->
+    <div class="principale">
+        <div class="name1">
+            <h3>ivory Mercedes 208</h3>
+        </div>
+        <div class="name1">
+            <h3>tan Fiat 1992</h3>
+        </div>
+        <div class="name1">
+            <h3>maroon Renault 2002</h3>
+        </div>
+        <div class="name1">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+        <div class="name1">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+        <div class="name1">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+        <div class="name2">
+            <h3>grey BMW 2003</h3>
+        </div>
+        <div class="name2">
+            <h3>fuchsia Alfa Romeo</h3>
+        </div>
+        <div class="name2">
+            <h3>lime BMW 2005</h3>
+        </div>
+        <div class="ex2">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+        <div class="ex2">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+        <div class="ex2">
+            <h5>Price: €57872</h5>
+            <button type="button"><a href="">Click here</a></button>
+        </div>
+    </div>
 
-    <details id="btnTechs">
-        <summary>Gadget in vendita</summary>
-        <pre><code id="resultTechs"></code>
-        </pre>
-    </details>
-
-    <p>sotto invece alcuni suggerimenti su come creare</p>
-    <details>
-        <summary>una barra di navigazione</summary>
-        <p><a href="https://www.w3schools.com/howto/howto_js_topnav.asp"> Superiore (Top Navigation)</a></p>
-        <p><a href="https://www.w3schools.com/howto/howto_js_sidenav.asp"> laterale (Side Navigation)</a></p>
-    </details>
-    <details>
-        <summary>una tabella</summary>
-        <p><a href="https://www.w3schools.com/tags/tag_table.asp"> Tabella Semplice</a></p>
-        <p><a href="https://www.w3schools.com/tags/tag_tbody.asp"> Con distinzione di stili e comportamenti per Header,
-                Body e Footer </a></p>
-    </details>
-    <details>
-        <summary>una dialog di dettagli</summary>
-        <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">Riferimento MDN</a></p>
-    </details>
-    <script type="module">
-        import fetch from './js/fetch.js';
-
-        /***
-         * Funzione che riporta l'output di un servizio formattato in un code Element
-         * @Parameters:
-         * f: la funzione che restituisce l'output json del servizio
-         * idCode: l'id dell'elemento in cui incollare il contenuto
-         */
-        async function showDataInCode(f, idCode) {
-            const data = await f();
-            const codeElement = document.getElementById(idCode);
-            codeElement.innerHTML = JSON.stringify(data, null, 4);
-        }
-
-        /***
-         * Funzione che aggiunge all'evento di apertura la chiamata al servizio del back-end
-         * @Parameters:
-         * type => il tipo di output da visualizzare, è il riferimento per:
-         *  * la funzione (getXXXX)
-         *  * l'elemento details (btnXXXX) a cui agganciare l'evento
-         *  * l'elemento code (resultXXXX) in cui incollare il risultato
-         */
-        async function addToggleEventToDetail(type) {
-            const detailElement = document.getElementById(`btn${type}`);
-            detailElement.addEventListener("toggle", (event) => {
-                if (detailElement.open) {
-                    showDataInCode(fetch[`get${type}`], `result${type}`)
-                }
-            });
-        }
-
-        //Applico la logica di chiamata ed esposizione per tutti i 3 tipi di servizio che ho a disposizione
-        ["Cars", "Techs", "Clothes"].forEach(type => addToggleEventToDetail(type));
-    </script>
 </body>
+<script src="./js/script.js"></script>
+<script type="module">
+    import fetch from './js/fetch.js';
 
+    /***
+     * Funzione che riporta l'output di un servizio formattato in un code Element
+     * @Parameters:
+     * f: la funzione che restituisce l'output json del servizio
+     * idCode: l'id dell'elemento in cui incollare il contenuto
+     */
+    async function showDataInCode(f, idCode) {
+        const data = await f();
+        const codeElement = document.getElementById(idCode);
+        codeElement.innerHTML = JSON.stringify(data, null, 4);
+    }
+
+    /***
+     * Funzione che aggiunge all'evento di apertura la chiamata al servizio del back-end
+     * @Parameters:
+     * type => il tipo di output da visualizzare, è il riferimento per:
+     *  * la funzione (getXXXX)
+     *  * l'elemento details (btnXXXX) a cui agganciare l'evento
+     *  * l'elemento code (resultXXXX) in cui incollare il risultato
+     */
+    async function addToggleEventToDetail(type) {
+        const detailElement = document.getElementById(`btn${type}`);
+        detailElement.addEventListener("toggle", (event) => {
+            if (detailElement.open) {
+                showDataInCode(fetch[`get${type}`], `result${type}`)
+            }
+        });
+    }
+
+    //Applico la logica di chiamata ed esposizione per tutti i 3 tipi di servizio che ho a disposizione
+    ["Cars", "Techs", "Clothes"].forEach(type => addToggleEventToDetail(type));
+</script>
 </html>

@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*SPALLA*/
+.spalla {
+    border-right: 3px solid rgb(255, 255, 255);
+    height: 100%;
+    position: fixed;
+    width: 20vw;
+    box-shadow: 10px 10px 5px lightgrey;
+}
+
+.spalla h1 {
+    font-size: 2vw;
+    align-items: right;
+    text-align: right;
+    width: 12vw;
+    margin-left: 7vw;
+    margin-top: -4vw;
+    margin-bottom: 3.25vw;
+    
+    color: red;
+}
+
+.barr{
+    background-image:linear-gradient(315deg, rgb(177, 177, 177) 100%, black 0%);
+    height: 0.5vw;
+    width: 18vw;
+    border-radius: 65px;
+    margin-left: 1vw;
+    margin-bottom: 1.5vw;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.spalla h3 {
+    font-size: 1.5vw;
+    text-align-last: left;
+    margin-left: 1vw;
+}
+
+.spalla #data, #orologio{
+    font-family:italic;
+    font-size: 1vw;
+
+}
+
+
+/*END SPALLA*/
+
+
+/*MENU*/
+.menu {
+    margin-left: 20.33vw;
+    position: fixed;
+
+}
+
+.ulmenu {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 3px solid rgb(75, 75, 75);
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.limenu {
+    float: left;
+}
+
+.limenu a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.limenu a:hover {
+    background-color: #ddd;
+}
+
+/*END MENU*/
+
+/*PAGINA PRINCIPALE*/
+.principale {
+    margin-left: 24.5vw;
+    padding-top: 7vw;
+}
+
+.name1{
+    width: 22.25vw;
+    border: 1.5px solid black;
+    float: left;
+    margin-left: 1vw;
+    font-weight: bold;
+    height: auto;
+}
+
+.name1 h3{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.name1 h5{
+    text-align: center;
+    padding-top: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    border: none;
+    background-color: yellow;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.name2{
+    margin-top: 2vw;
+    width: 22.25vw;
+    border: 1.5px solid black;
+    float: left;
+    margin-left: 1vw;
+    font-weight: bold;
+    height: auto;
+}
+
+.name2 h3{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.ex2 h5{
+    text-align: center;
+    padding-top: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+.ex2{
+    width: 22.25vw;
+    border: 1.5px solid black;
+    float: left;
+    margin-left: 1vw;
+    font-weight: bold;
+    height: auto;
+    overflow: hidden;
+}
+/*END PAGINA PRINCIPALE*/
+
+/*ABOUT*/
+.container{
+    border: 2px solid yellow;
+    position: absolute;
+    margin-left: 20.4vw;
+    margin-top: 2.7vw;
+    height: 65vw;
+    width: 79%;
+    font-family: system-ui, sans-serif;
+    font-size: 2.5ch;
+}
+
+.div{
+    border: 2px solid red;
+    height: 18vw;
+    width: 340.5px;
+    margin-left: 100px;  
+}
+
+.div img{
+    position: absolute;
+    margin-top:3vw;
+    margin-left: 30vw;
+    width: 400px;
+}
+
+.div1{
+    background-color: rgb(230, 230, 230);
+    border: 2px solid black;
+    height: 20vw;
+}
+
+.div1 p{
+    border: 2px solid red;
+    width: 18vw;
+    height: 9.5vw;
+    margin-top: 2vw;
+    margin-left: 51vw;
+}
+
+.div1 h1{
+    margin-right: 12vw;
+    margin-top: 1vw;
+}
+
+.div1 img{
+    position: absolute;
+    margin-top: -11vw;
+    margin-left: -34vw;
+    width: 400px;
+}  
+
+.div2{
+    border: 2px solid red;
+    height: 20vw;
+    width: 23vw;
+    margin-left: 100px;
+}
+
+.div2 img{
+    position: absolute;
+    margin-top: -5vw;
+    margin-left: 30vw;
+    width: 400px;
+}
+
+/*END ABOUT*/
+
+
+/*MAP*/
+.map {
+    height: 400px;
+    width: 100%;
+}
+
+/*END MAP*/
